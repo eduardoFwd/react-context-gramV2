@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <NavHeader />
-      <Post></Post>
+      <Post user={{username: 'Jefferson'}}></Post>
     </>
   )
 }
