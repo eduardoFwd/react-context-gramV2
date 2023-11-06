@@ -2,14 +2,17 @@
 import { NavHeader } from './components/navbar'
 import { Post } from './components/post'
 import './App.css';
+import { UserContex } from './context/UserContext';
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <NavHeader />
-      <Post user={{username: 'Jefferson'}}></Post>
+      <UserContex.Provider value={{username: 'Jordy'}}>
+        <NavHeader />
+        <Post user={{username: 'Jordy'}}></Post>
+      </UserContex.Provider>
     </>
   )
 }

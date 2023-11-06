@@ -5,6 +5,7 @@ import { PostPicture } from "../post-picture/picture";
 
 export const Post = (prop) => {
     const user = prop.user;
+
     return (
       <Container className="post">
         <Card>
