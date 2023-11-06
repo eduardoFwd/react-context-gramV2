@@ -1,7 +1,10 @@
 import { CardHeader, CardImg } from "react-bootstrap";
+import { useUser } from "../../context/UserContext";
 
-export const PostHeader = (prop) => {
-    const user = prop.user;
+export const PostHeader = () => {
+
+    const user = useUser();
+
     return (
       <CardHeader>
         <CardImg

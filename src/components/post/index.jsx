@@ -3,15 +3,14 @@ import { PostHeader } from "../post-header/header";
 import { PostBody } from "../post-info/body";
 import { PostPicture } from "../post-picture/picture";
 
-export const Post = (prop) => {
-    const user = prop.user;
+export const Post = () => {
 
     return (
       <Container className="post">
         <Card>
-          <PostHeader user={user}/>
+          <PostHeader/>
           <PostPicture />
-          <PostBody  user={user}/>
+          <PostBody/>
         </Card>
       </Container>
     );

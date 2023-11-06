@@ -5,13 +5,13 @@ import './App.css';
 import { UserContex } from './context/UserContext';
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const user = {username: 'Adays'};
 
   return (
     <>
-      <UserContex.Provider value={{username: 'Jordy'}}>
+      <UserContex.Provider value={user}>
         <NavHeader />
-        <Post user={{username: 'Jordy'}}></Post>
+        <Post></Post>
       </UserContex.Provider>
     </>
   )
