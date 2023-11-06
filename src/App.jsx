@@ -5,7 +5,10 @@ import './App.css';
 import { UserContex } from './context/UserContext';
 
 function App() {
-  const user = {username: 'Adays'};
+  const user = {
+    username: 'Adays',
+    followers: 500
+  };
 
   return (
     <>
