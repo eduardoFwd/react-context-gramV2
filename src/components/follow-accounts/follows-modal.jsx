@@ -4,11 +4,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import UserContext from "../../context/user/UserContext";
 
-export const SuggestedAccountsModal = (props) => {
-  const {getSuggestedAccount,suggestedAccounts,addAccount} = useContext(UserContext);
-  const { displayModal, onClose } = props;
+export const FollowedAccountsModal = (props) => {
+  const { followedAccounts,unFollow} = useContext(UserContext);
+  const { displayModalFollowed, onClose } = props;
 
-  const [show, setShow] = useState(displayModal || false);
+  const [show, setShow] = useState(displayModalFollowed || false);
 
   const handleClose = () => {
     setShow(false);
@@ -16,23 +16,19 @@ export const SuggestedAccountsModal = (props) => {
       onClose();
     }
   };
-useEffect(()=>{
-  getSuggestedAccount();
-  console.log("suggestedAccounts",suggestedAccounts);
-},[])
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Suggested Accounts</Modal.Title>
+          <Modal.Title>Followed Accounts</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
-            {!!suggestedAccounts &&
-              suggestedAccounts.map((account, index) => {
+            {!!followedAccounts &&
+              followedAccounts.map((account, index) => {
                 return (
                   <>
-                    <Row key={`suggested-account${index}`}>
+                    <Row key={`followed-account${index}`}>
                       <Col>
                         <CardImg
                           src={account.thumbnail}
@@ -46,10 +42,10 @@ useEffect(()=>{
                       <Col>
                         <Button
                           onClick={() => {
-                            addAccount(account)
+                           unFollow(account.uid)
                           }}
                         >
-                          Follow
+                          Unfollow
                         </Button>
                       </Col>
                     </Row>
